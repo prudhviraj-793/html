@@ -7,8 +7,23 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>hello babu!!!!</h1>
-    <p>1 kai</p>
-    <p>one two 3</p>
+    <form>
+        <label>Name<input type="text" /></label>
+        <label>Mail<input type="email" /></label>
+    </form><br>
+    <button type="submit">submit</button>
+    <script>
+        function saveToLocalStorage(event){
+            event.preventDefault();
+            const name = event.target.name.value;
+            const mail = event.target.mail.value;
+            let obj = {
+                name,
+                mail
+            }
+            localStorage.setItem(obj.mail,obj);
+            console.log(localStorage);
+        }
+    </script>
 </body>
 </html>
